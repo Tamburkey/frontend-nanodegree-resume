@@ -1,7 +1,7 @@
 var bio = {
 	"name" : "Peter Mayor",
 	"role" : "Engineer",
-	"welcomeMessage" : "A-hoy hoy!",
+	"welcomeMessage" : "Ahoy-hoy!",
 	"biopic" : "images/biopic.jpg",
 	"contacts" : {
 		"mobile" : "555-5555",
@@ -210,14 +210,12 @@ var education = {
 			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
 			$(".education-entry:last").append(formattedURL);
 			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-			$(".education-entry:last").append(formattedDates);
-			
+			$(".education-entry:last").append(formattedDates);	
 		}
-		$("#mapDiv").append(googleMap);
-		$("#main").append(internationalizeButton); 
 	}
 }
 
+// function used for internationalize button - changes last name to uppercase
 function inName() {
 	var finalName = bio.name;
     var nameArray = finalName.split(' ');
@@ -231,13 +229,17 @@ function inName() {
     firstName = firstLetter + endString;
     finalName = firstName + ' ' + lastName;
     return finalName;
-};
+}
 
-bio.display();
-work.display();
-projects.display();
-education.display();
+function masterDisplay() {
+	bio.display();
+	work.display();
+	projects.display();
+	education.display();
+	$("#mapDiv").append(googleMap);
+	$("#main").append(internationalizeButton); 
+}
 
-
+masterDisplay();
 
 

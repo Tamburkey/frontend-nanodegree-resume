@@ -26,7 +26,7 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 
 // added list functionality for the description
-var HTMLworkDescriptionStart = '<div class="description-entry" id="description"><ul></ul></div>';
+var HTMLworkDescriptionStart = '<div class="description-entry"><ul></ul></div>';
 var HTMLworkDescription = '<li><div>%data%</div></li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
