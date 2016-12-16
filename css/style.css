@@ -105,9 +105,11 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 35px;
   color: #f3f3f3;
-  line-height: 28px;
+  position: absolute;
+  right: 30px;
+  top: 400px;
 }
 
 #skills-h3 {
@@ -140,7 +142,7 @@ a {
 
 #header {
   background-image: url("C:/Users/StepPepper/Documents/UDA/frontend-nanodegree-resume/images/background_img.jpg");
-  background-position: top;
+  background-position: left;
 }
 
 .flex-box {
@@ -154,7 +156,7 @@ a {
 
 .flex-column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   padding: 10px;
 }
@@ -183,11 +185,19 @@ img {
 span {
   padding: 5px;
   color: gray;
+}
 
+button {
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 #lets-connect {
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Media queries to handle various device widths */
@@ -225,7 +235,7 @@ span {
 #mapDiv {
   height: 400px;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 160px;
 }
 
 @media only screen and (min-width: 750px) {
