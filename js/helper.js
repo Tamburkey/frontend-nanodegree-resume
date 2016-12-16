@@ -13,7 +13,7 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span>%data%</span><br>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -30,30 +30,33 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
+var HTMLworkEmployer = '<div>%data%';
+var HTMLworkTitle = ' - %data%</div>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+
+// added list functionality for the description
+var HTMLworkDescriptionStart = '<br><div class="description-entry" id="description"><ul></ul></div>';
+var HTMLworkDescription = '<li><div>%data%</div></li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<div>%data%</div>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolName = '<div>%data%';
+var HTMLschoolDegree = ' -- %data%</div>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolMajor = '<div class="major"><em>Major: %data%</em><div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
+var HTMLonlineTitle = '<div>%data%';
+var HTMLonlineSchool = ' - %data%</div>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<p class="courseURL"><a href="%data%">Course Link</a></p>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -86,10 +89,11 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y)
 });
-
-
 
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.
@@ -98,10 +102,10 @@ https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
 
-
 /*
 Start here! initializeMap() is called when page is loaded.
 */
+
 function initializeMap() {
 
   var locations;
@@ -239,11 +243,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+  map.fitBounds(mapBounds);
+});
