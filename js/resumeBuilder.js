@@ -43,6 +43,10 @@ var bio = {
 		$("#topContacts").append(formattedGithub);
 		$("#footerContacts").append(formattedGithub);
 
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location)
+		$("#topContacts").append(formattedLocation);
+		$("#footerContacts").append(formattedLocation);
+
 		$("#header").append(HTMLskillsStart);
 		if (bio.skills.length > 0) {
 			for (i = 0; i < bio.skills.length; i++) {
