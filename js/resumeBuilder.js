@@ -158,7 +158,8 @@ var education = {
 			"dates" : "2011",
 			"url" : "gatech.edu",
 			"majors" : [
-				"Mechanical Engineering"
+				"Mechanical Engineering", 
+				"Nothing"
 				]
 		}
 	],
