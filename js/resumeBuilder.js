@@ -52,8 +52,6 @@ var bio = {
 	}
 }
 
-bio.display();
-
 var work = {
 	"jobs" : [
 		{
@@ -108,8 +106,6 @@ var work = {
 	}
 }
 
-work.display();
-
 var projects = {
 	"projects" : [
 		{
@@ -152,8 +148,6 @@ var projects = {
 		}
 	}
 }
-
-projects.display();
 
 var education = {
 	"schools" : [
@@ -218,10 +212,10 @@ var education = {
 			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
 			$(".education-entry:last").append(formattedURL);
 		}
+		$("#mapDiv").append(googleMap);
+		$("#main").append(internationalizeButton); 
 	}
 }
-
-education.display()
 
 function inName() {
 	var finalName = bio.name;
@@ -238,7 +232,11 @@ function inName() {
     return finalName;
 };
 
-$("#main").append(internationalizeButton); 
-$("#mapDiv").append(googleMap);
+bio.display();
+work.display();
+projects.display();
+education.display();
+
+
 
 
