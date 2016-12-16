@@ -2,7 +2,7 @@ var bio = {
 	"name" : "Peter Mayor",
 	"role" : "Engineer",
 	"welcomeMessage" : "A-hoy hoy!",
-	"biopic" : "http://i.imgur.com/lwNG6Ze.jpg",
+	"biopic" : "images/biopic.jpg",
 	"contacts" : {
 		"mobile" : "555-5555",
 		"email" : "petem14@gmail.com",
@@ -118,8 +118,8 @@ var projects = {
 			"dates" : "2015 - 2016",
 			"description" : "Quality engineer for a tier 1 automotive injection molding facility.",
 			"images" : [
-				"http://www.substech.com/dokuwiki/lib/exe/fetch.php?w=&h=&cache=cache&media=polymer_injection_molding.png", 
-				"http://img2.everychina.com/img/f3/01/e874784290033740828138e7e7ad-600x600c0-790b/black_plastic_pellets_for_injection_molding.jpg"
+				"images/injection_molder.png", 
+				"images/pellets.jpg"
 				]
 		},
 		{
@@ -127,8 +127,8 @@ var projects = {
 			"dates" : "2011 - 2015",
 			"description" : "Assistant manager of quality control for a tier 1 automotive bearing manufacturing facility.",
 			"images" : [
-				"https://s3.amazonaws.com/engrade-myfiles/4083769570221760/40-15.jpg", 
-				"http://www.globalspec.com/ImageRepository/LearnMore/201310/needle_roller_bearing_identified3ead1be34aaf4057adc9c4de0a8e4048.png"
+				"images/bearings.png", 
+				"images/plan_gear.jpg"
 				]
 		}
 	],
