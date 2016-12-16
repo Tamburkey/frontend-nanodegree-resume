@@ -20,11 +20,7 @@ h6 {
 
 .description-entry {
   text-indent: 20px;
-  list-style-type: square;
-}
-
-.courseURL {
-  text-indent: 20px;
+  list-style-type: circle;
 }
 
 .major { 
@@ -71,14 +67,14 @@ h3,
 h4,
 h5 {
   padding:10px 5%;
-
+  text-align: center;
 }
 
 .date-text {
   font-style: italic;
   font-size: 14px;
   color: #999;
-  text-align: left;
+  padding: 5px;
 }
 
 .location-text {
@@ -87,7 +83,7 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
+  line-height: 0px;
 }
 
 p {
@@ -114,7 +110,7 @@ a {
 
 #skills-h3 {
   color: #f5ae23;
-  display: none;
+  text-align: left;
 }
 
 .orange {
@@ -174,6 +170,11 @@ ul {
   padding: 10px;
   width: 300px;
   display: none;
+}
+
+.courseURL {
+  float: right;
+  line-height: 0px;
 }
 
 img {

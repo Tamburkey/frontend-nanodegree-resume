@@ -207,10 +207,11 @@ var education = {
 			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
 			var formattedTitleAndSchool = formattedTitle + formattedSchool;
 			$(".education-entry:last").append(formattedTitleAndSchool);
-			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-			$(".education-entry:last").append(formattedDates);
 			var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
 			$(".education-entry:last").append(formattedURL);
+			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+			$(".education-entry:last").append(formattedDates);
+			
 		}
 		$("#mapDiv").append(googleMap);
 		$("#main").append(internationalizeButton); 

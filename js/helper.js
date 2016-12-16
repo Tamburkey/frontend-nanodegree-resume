@@ -1,14 +1,4 @@
 /*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
-*/
-
-
-/*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
@@ -36,13 +26,13 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 
 // added list functionality for the description
-var HTMLworkDescriptionStart = '<br><div class="description-entry" id="description"><ul></ul></div>';
+var HTMLworkDescriptionStart = '<div class="description-entry" id="description"><ul></ul></div>';
 var HTMLworkDescription = '<li><div>%data%</div></li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<div>%data%</div>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
@@ -56,7 +46,7 @@ var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<div>%data%';
 var HTMLonlineSchool = ' - %data%</div>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<p class="courseURL"><a href="%data%">Course Link</a></p>';
+var HTMLonlineURL = '<div class="courseURL"><a href="%data%">Link</a></div>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -126,13 +116,10 @@ function initializeMap() {
   written for bio, education, and work.
   */
   function locationFinder() {
-
     // initializes an empty array
     var locations = [];
-
     // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
-
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
@@ -140,15 +127,11 @@ function initializeMap() {
     education.schools.forEach(function(school){
       locations.push(school.location);
     });
-
     // iterates through work locations and appends each location to
-    // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide:
-    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    // the locations array.
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
-
     return locations;
   }
 
@@ -179,7 +162,7 @@ function initializeMap() {
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
+    // Zooms in on location when marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
       map.setZoom(8);
       map.setCenter(marker.getPosition());
@@ -236,7 +219,6 @@ function initializeMap() {
   // pinPoster(locations) creates pins on the map for each location in
   // the locations array
   pinPoster(locations);
-
 }
 
 /*
