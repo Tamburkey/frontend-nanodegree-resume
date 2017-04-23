@@ -51,10 +51,7 @@ var HTMLonlineURL = '<div class="courseURL"><a href="%data%">Link</a></div>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
-
-/*
-The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
+// internationalize button helper
 $(document).ready(function() {
   $('button').click(function() {
     var $name = $('#name');
@@ -63,33 +60,6 @@ $(document).ready(function() {
   });
 });
 
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
-*/
-var clickLocations = [];
-
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
-
-$(document).click(function(loc) {
-  var x = loc.pageX;
-  var y = loc.pageY;
-
-  logClicks(x,y)
-});
-
-/*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
-*/
 var map;    // declares a global map variable
 
 /*
@@ -110,25 +80,17 @@ function initializeMap() {
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-
   /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
+  locationFinder() returns an array of every location string from the model
   */
   function locationFinder() {
-    // initializes an empty array
     var locations = [];
-    // adds the single location property from bio to the locations array
     locations.push(model.contacts.location);
-    // iterates through school locations and appends each location to
-    // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide:
-    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    
     model.schools.forEach(function(school){
       locations.push(school.location);
     });
-    // iterates through work locations and appends each location to
-    // the locations array.
+
     model.jobs.forEach(function(job){
       locations.push(job.location);
     });
