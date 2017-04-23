@@ -1,2 +1,2 @@
 # Resume
-It's some sort of resumes perhaps.
+It's some sort of resume perhaps.

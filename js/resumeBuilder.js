@@ -151,8 +151,7 @@ var education = {
         "dates": "2011",
         "url": "gatech.edu",
         "majors": [
-            "Mechanical Engineering",
-            "Nothing"
+            "Mechanical Engineering"
         ]
     }],
     "onlineCourses": [{
